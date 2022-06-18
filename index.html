@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body.main {
+            background: hsl(0, 100%, 74%);
+            background-image: url("images/bg-intro-desktop.png");
+            /*font-size: 16px;*/
+        }
+        div.container {
+            display: flex;
+            margin: 5% 10%;
+        }
+        .left {
+            margin: 10%;
+            flex-basis: 50%;
+            color: white;
+        }
+
+        .right {
+            flex-basis: 50%;
+        }
+        .alert{
+            text-align: center;
+            color: white;
+            background-color: hsl(248, 32%, 49%);
+            padding: .1px;
+            margin: 5px 5px;
+            border-radius:10px;
+            box-shadow: grey;
+        }
+        .form {
+            display: block;
+            text-align: center;
+            background-color: white;
+            color: grey;
+            /*padding: 25px;*/
+            overflow: clip;
+            margin: 5px 5px;
+            margin-top: 20px;
+            border-radius:10px;
+        }
+        .form-input{
+            /*width: 80%;*/
+            margin: 5px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="main">
+    <div class="container">
+        <div class="left">
+            <h1 class="left-heading" style="font-family: 'Poppins', sans-serif; font-size: 2.5rem">Learn to Code by watching others</h1>
+            <p class="left-text">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+        </div>
+        <div class="right">
+            <div class="alert">
+                <p><strong>Try if free 7 days</strong> then $12/mo. thereafter</p>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button>CLAIM YOUR FREE TRIAL</button>
+                    </div>
+                    <p>By clicking the button, you are agreeing to our <span style="color: hsl(0, 100%, 74%) "><strong>Terms and Services</strong></span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

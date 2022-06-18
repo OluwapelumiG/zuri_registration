@@ -6,11 +6,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <style>
         body.main {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
             background: hsl(0, 100%, 74%);
             background-image: url("images/bg-intro-desktop.png");
-            /*font-size: 16px;*/
+            font-family: 'Poppins', sans-serif;
         }
         div.container {
             display: flex;
@@ -38,31 +43,57 @@
             text-align: center;
             background-color: white;
             color: grey;
-            margin-top: 20px;
+            /*margin-top: 20px;*/
             border-radius:10px;
-            padding: 20px;
+            padding: 25px;
         }
         .form-group {
             /*max-width: 320px;*/
+            /*width: 100%;*/
+            /*border: 1px solid hsl(246, 25%, 77%);*/
+            /*border-radius: 4px;*/
+            margin: 15px;
         }
+
         .form-input{
-            display: block;
-            margin: 25px;
+            display: inline-block;
+            box-sizing: border-box;
             padding: 12px;
             width: 100%;
             border: 1px solid hsl(246, 25%, 77%);
             border-radius: 4px;
         }
+        .error {
+            /*outline: 1px solid hsl(248, 32%, 49%);*/
+            /*border: 1px solid hsl(248, 32%, 49%);*/
+            color: hsl(0, 100%, 74%);
+            font-size: 0.7em;
+            float: right!important;
+            margin: 5px;
+            margin-bottom: 15px;
+        }
+        .input-error {
+            border-color: hsl(0, 100%, 74%);
+            color: hsl(0, 100%, 74%);
+            content: "\F06A";
+        }
         .button {
-            padding: 10px;
+            padding: 12px;
+            border-radius:10px;
             width: 100%;
+            background-color: hsl(154, 59%, 51%);
+            color: white;
+            border: none;
+        }
+        .button:hover {
+            opacity: 0.7;
         }
     </style>
 </head>
 <body class="main">
     <div class="container">
         <div class="left">
-            <h1 class="left-heading" style="font-family: 'Poppins', sans-serif; font-size: 2.5rem">Learn to Code by watching others</h1>
+            <h1 class="left-heading" style="font-size: 2.5rem">Learn to Code by watching others</h1>
             <p class="left-text">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
         </div>
         <div class="right">
@@ -70,27 +101,75 @@
                 <p><strong>Try if free 7 days</strong> then $12/mo. thereafter</p>
             </div>
             <div class="form">
-                <form action="">
+                <form id="form" action="">
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="First Name">
+                        <input id="firstname" type="text" class="form-input input-error" placeholder="First Name">
+                        <span id="firstname_error" class="error" style="display: none;">First Name cannot be empty</span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Last Name">
+                        <input id="lastname" type="text" class="form-input" placeholder="Last Name">
+                        <span id="lastname_error" class="error" style="display: none;">Last Name cannot be empty</span>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Email Address">
+                        <input id="email" type="email" class="form-input" placeholder="Email Address">
+                        <span id="email_error" class="error" style="display: none;">Looks like this is not an email</span>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-input" placeholder="Password">
+                        <input id="password" type="password" class="form-input" placeholder="Password">
+                        <span id="password_error" class="error" style="display: none;">Password cannot be empty</span>
                     </div>
                     <div class="form-group">
-                        <button class="button">CLAIM YOUR FREE TRIAL</button>
+                        <button class="button" type="submit">CLAIM YOUR FREE TRIAL</button>
                     </div>
                     <p>By clicking the button, you are agreeing to our <span style="color: hsl(0, 100%, 74%) "><strong>Terms and Services</strong></span></p>
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById("firstname").addEventListener("change", () => {
+            firstname = document.getElementById("firstname").value;
+            if (firstname == ''){
+                document.getElementById("firstname_error").style.display = 'block';
+            }
+            else {
+                document.getElementById("firstname_error").style.display = 'none';
+
+            }
+        });
+        document.getElementById("lastname").addEventListener("change", () => {
+            lastname = document.getElementById("lastname").value;
+            if (lastname == ''){
+                document.getElementById("lastname_error").style.display = 'block';
+            }
+            else {
+                document.getElementById("lastname_error").style.display = 'none';
+
+            }
+        });
+        document.getElementById("email").addEventListener("change", () => {
+            email = document.getElementById("email").value;
+            if ((email == '') || (email.match(/@/) != '@')){
+                document.getElementById("email_error").style.display = 'block';
+            }
+            else {
+                document.getElementById("email_error").style.display = 'none';
+
+            }
+        });
+        document.getElementById("password").addEventListener("change", () => {
+            password = document.getElementById("password").value;
+            if (password == ''){
+                document.getElementById("password_error").style.display = 'block';
+            }
+            else {
+                document.getElementById("password_error").style.display = 'none';
+
+            }
+        });
+
+    </script>
 
 </body>
 </html>

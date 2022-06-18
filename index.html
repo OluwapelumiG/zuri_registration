@@ -21,7 +21,6 @@
             flex-basis: 50%;
             color: white;
         }
-
         .right {
             flex-basis: 50%;
         }
@@ -35,20 +34,28 @@
             box-shadow: grey;
         }
         .form {
-            display: block;
+            /*display: block;*/
             text-align: center;
             background-color: white;
             color: grey;
-            /*padding: 25px;*/
-            overflow: clip;
-            margin: 5px 5px;
             margin-top: 20px;
             border-radius:10px;
+            padding: 20px;
+        }
+        .form-group {
+            /*max-width: 320px;*/
         }
         .form-input{
-            /*width: 80%;*/
-            margin: 5px;
-            padding: 20px;
+            display: block;
+            margin: 25px;
+            padding: 12px;
+            width: 100%;
+            border: 1px solid hsl(246, 25%, 77%);
+            border-radius: 4px;
+        }
+        .button {
+            padding: 10px;
+            width: 100%;
         }
     </style>
 </head>
@@ -77,7 +84,7 @@
                         <input type="password" class="form-input" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <button>CLAIM YOUR FREE TRIAL</button>
+                        <button class="button">CLAIM YOUR FREE TRIAL</button>
                     </div>
                     <p>By clicking the button, you are agreeing to our <span style="color: hsl(0, 100%, 74%) "><strong>Terms and Services</strong></span></p>
                 </form>
